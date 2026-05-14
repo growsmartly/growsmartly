@@ -263,7 +263,7 @@
             font-size: 0.95rem;
         }
 
-        /* ===== HOW WE GROW PAGE ===== */
+        /* ===== HOW WE GROW ===== */
         .growth-page {
             background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
         }
@@ -315,7 +315,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* ===== RESULTS PAGE ===== */
+        /* ===== RESULTS ===== */
         .results-page {
             background: var(--navy);
             color: var(--white);
@@ -404,25 +404,31 @@
             color: var(--coral-soft);
         }
 
-        /* ===== PRICING ===== */
-        .pricing { background: var(--cream); }
+        /* ===== PRICING - FIXED ===== */
+        .pricing { 
+            background: var(--cream); 
+            padding: 4rem 5%;
+        }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             max-width: 1100px;
             margin: 0 auto;
-            align-items: start;
+            align-items: stretch;
         }
 
         .price-card {
             background: var(--white);
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 1.5rem;
             border-radius: 24px;
             text-align: center;
             border: 2px solid transparent;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .price-card.popular {
@@ -441,6 +447,7 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 700;
+            white-space: nowrap;
         }
 
         .price-card h3 {
@@ -450,13 +457,14 @@
         }
 
         .price {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--navy);
             margin: 1rem 0;
+            line-height: 1.2;
         }
 
-        .price span {
+        .price .old-price {
             display: block;
             font-size: 1rem;
             color: var(--gray);
@@ -474,18 +482,20 @@
             font-weight: 600;
             display: inline-block;
             margin-bottom: 1.5rem;
+            white-space: nowrap;
         }
 
         .price-card ul {
             list-style: none;
-            margin: 1.5rem 0;
+            margin: 0 0 1.5rem 0;
             text-align: left;
+            flex-grow: 1;
         }
 
         .price-card li {
-            padding: 0.7rem 0;
+            padding: 0.6rem 0;
             border-bottom: 1px solid var(--light-gray);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: flex;
             align-items: flex-start;
             gap: 0.5rem;
@@ -496,6 +506,12 @@
             color: var(--coral);
             font-weight: 700;
             flex-shrink: 0;
+        }
+
+        .price-card .btn {
+            margin-top: auto;
+            justify-content: center;
+            width: 100%;
         }
 
         /* ===== CONTACT ===== */
@@ -609,8 +625,13 @@
 
             section { padding: 3rem 5%; }
 
-            .cards, .services-grid, .pricing-grid, .results-grid {
+            .cards, .services-grid, .results-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
             }
 
             .step {
@@ -630,7 +651,7 @@
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.8rem; }
 
-            .price { font-size: 2.2rem; }
+            .price { font-size: 2rem; }
 
             .whatsapp-float {
                 width: 50px;
@@ -669,7 +690,7 @@
         </div>
     </section>
 
-    <!-- How We Grow Page -->
+    <!-- How We Grow -->
     <section class="growth-page" id="how-we-grow">
         <div class="section-header">
             <h2>How we grow your business</h2>
@@ -744,7 +765,7 @@
         </div>
     </section>
 
-    <!-- Results Page -->
+    <!-- Results -->
     <section class="results-page" id="results">
         <div class="section-header">
             <h2>What growth actually looks like</h2>
@@ -822,7 +843,7 @@
         <a href="https://wa.me/918725040390?text=Hi! I want to be a founding client. Tell me more." class="btn btn-primary">Claim My Founding Spot</a>
     </section>
 
-    <!-- Pricing -->
+    <!-- Pricing - FIXED -->
     <section class="pricing" id="pricing">
         <div class="section-header">
             <h2>Simple, honest pricing</h2>
@@ -832,7 +853,7 @@
             <div class="price-card">
                 <h3>Starter</h3>
                 <div class="price">
-                    <span>₹7,999</span>
+                    <span class="old-price">₹7,999</span>
                     ₹5,599
                 </div>
                 <div class="save-tag">Save ₹2,400</div>
@@ -849,7 +870,7 @@
                 <div class="popular-tag">MOST POPULAR</div>
                 <h3>Growth</h3>
                 <div class="price">
-                    <span>₹14,999</span>
+                    <span class="old-price">₹14,999</span>
                     ₹10,499
                 </div>
                 <div class="save-tag">Save ₹4,500</div>
@@ -866,7 +887,60 @@
             <div class="price-card">
                 <h3>Scale</h3>
                 <div class="price">
-                    <span>₹29,999</span>
+                    <span class="old-price">₹29,999</span>
                     ₹20,999
                 </div>
-                <div class="save-tag">Save
+                <div class="save-tag">Save ₹9,000</div>
+                <ul>
+                    <li>Everything in Growth</li>
+                    <li>Google & Facebook Ads setup</li>
+                    <li>Professional logo & brand kit</li>
+                    <li>Monthly check-ins & tweaks</li>
+                    <li>Priority support anytime</li>
+                    <li>Unlimited changes for 30 days</li>
+                </ul>
+                <a href="https://wa.me/918725040390?text=Hi! I'm interested in the Scale plan." class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <h2>Let's talk</h2>
+            <p>No forms to fill. No waiting. Just a real conversation about your business.</p>
+        </div>
+        <div class="contact-boxes">
+            <div class="contact-box">
+                <div class="icon">📱</div>
+                <p class="label">WhatsApp us anytime</p>
+                <a href="https://wa.me/918725040390">87250 40390</a>
+            </div>
+            <div class="contact-box">
+                <div class="icon">📞</div>
+                <p class="label">Or just call</p>
+                <a href="tel:+916283706612">62837 06612</a>
+            </div>
+        </div>
+        <div style="margin-top: 2.5rem;">
+            <a href="https://wa.me/918725040390?text=Hi GrowSmartly! I want a free audit of my website/business." class="btn btn-primary">Get My Free Audit</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo">Grow<span>Smartly</span></div>
+        <p>Built with care by engineers who care.</p>
+        <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.9rem;">
+            📱 87250 40390 &nbsp;|&nbsp; 📞 62837 06612<br>
+            © 2026 GrowSmartly. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/918725040390?text=Hi! I visited your website and have a question." class="whatsapp-float" title="Chat with us on WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
