@@ -263,6 +263,116 @@
             font-size: 0.95rem;
         }
 
+        /* ===== HOW WE GROW PAGE ===== */
+        .growth-page {
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+        }
+
+        .growth-steps {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--coral) 0%, var(--warm) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .step-content ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            color: var(--gray);
+        }
+
+        .step-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== RESULTS PAGE ===== */
+        .results-page {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .results-page .section-header h2,
+        .results-page .section-header p {
+            color: var(--white);
+        }
+
+        .results-page .section-header p {
+            opacity: 0.8;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .result-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .result-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-5px);
+        }
+
+        .result-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--coral-soft) 0%, var(--warm) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .result-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .result-card p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
         /* ===== FOUNDING ===== */
         .founding {
             background: var(--navy);
@@ -462,14 +572,14 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 1.8rem;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             transition: all 0.3s;
             z-index: 1000;
+            font-size: 28px;
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
         }
 
@@ -499,8 +609,17 @@
 
             section { padding: 3rem 5%; }
 
-            .cards, .services-grid, .pricing-grid {
+            .cards, .services-grid, .pricing-grid, .results-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin: 0 auto;
             }
 
             .contact-boxes { flex-direction: column; align-items: center; }
@@ -516,7 +635,7 @@
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
-                font-size: 1.5rem;
+                font-size: 24px;
                 bottom: 15px;
                 right: 15px;
             }
@@ -531,7 +650,8 @@
         <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</button>
         <nav>
             <a href="#home">Home</a>
-            <a href="#why">Why Us</a>
+            <a href="#how-we-grow">How We Grow</a>
+            <a href="#results">Results</a>
             <a href="#services">Services</a>
             <a href="#pricing">Pricing</a>
             <a href="#contact">Contact</a>
@@ -545,36 +665,121 @@
         <p>Hi, we're a small team of engineers who got tired of seeing businesses get ripped off by agencies that don't understand how the internet actually works. So we started GrowSmartly — to do it right.</p>
         <div class="btn-group">
             <a href="https://wa.me/918725040390?text=Hi! I saw your website and want to talk about growing my business." class="btn btn-primary">📱 Let's Talk on WhatsApp</a>
-            <a href="#pricing" class="btn btn-secondary">See Our Plans</a>
+            <a href="#how-we-grow" class="btn btn-secondary">See How We Grow Businesses</a>
         </div>
     </section>
 
-    <!-- Why Us -->
-    <section class="why-us" id="why">
+    <!-- How We Grow Page -->
+    <section class="growth-page" id="how-we-grow">
         <div class="section-header">
-            <h2>Why businesses trust us</h2>
-            <p>We're not magicians. We're engineers who read the manual so you don't have to.</p>
+            <h2>How we grow your business</h2>
+            <p>No fluff. No jargon. Just a simple 5-step process that actually works.</p>
         </div>
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">🔍</div>
-                <h3>We speak Google's language</h3>
-                <p>Clean code, fast loading, proper structure — the boring technical stuff that actually makes you rank higher. Most agencies skip this. We don't.</p>
+        <div class="growth-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>We audit where you are right now</h3>
+                    <p>Before we touch anything, we look at your current website, social media, and Google ranking. We find the leaks — slow speed, broken links, missing SEO, poor mobile experience. You get a clear report of what's hurting you.</p>
+                    <ul>
+                        <li>Website speed test</li>
+                        <li>SEO health check</li>
+                        <li>Mobile responsiveness check</li>
+                        <li>Competitor comparison</li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
-                <div class="card-icon">📱</div>
-                <h3>We understand social algorithms</h3>
-                <p>We know what makes Instagram, Facebook, and YouTube push your content. No guesswork — just engineering.</p>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>We build a foundation Google loves</h3>
+                    <p>Most agencies slap together a pretty site that Google can't even read. We write clean, semantic code that search engines understand. Fast loading, mobile-perfect, structured properly — the boring technical stuff that puts you on page one.</p>
+                    <ul>
+                        <li>Clean semantic HTML</li>
+                        <li>Core Web Vitals optimization</li>
+                        <li>Schema markup for rich snippets</li>
+                        <li>SSL security & HTTPS</li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3>Speed that converts</h3>
-                <p>Every second your site takes to load, you lose customers. We build sites that load in under 2 seconds. Because patience is dead.</p>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>We design for humans, not just looks</h3>
+                    <p>Your website isn't an art piece — it's a sales tool. We place buttons where eyes naturally go, write copy that speaks your customer's language, and remove every distraction between "visit" and "contact."</p>
+                    <ul>
+                        <li>Conversion-focused layout</li>
+                        <li>Clear call-to-action buttons</li>
+                        <li>WhatsApp & click-to-call integration</li>
+                        <li>Trust signals (reviews, badges)</li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
-                <div class="card-icon">🛡️</div>
-                <h3>Built to last</h3>
-                <p>When Google changes its algorithm (which it does 500+ times a year), your site won't break. We build future-proof.</p>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>We make you impossible to ignore</h3>
+                    <p>Being on Google isn't enough — you need to be found. We optimize your Google Business Profile, set up local SEO, and create content that answers what your customers are actually searching for.</p>
+                    <ul>
+                        <li>Google Business Profile setup</li>
+                        <li>Local SEO optimization</li>
+                        <li>Keyword-targeted content</li>
+                        <li>Social media integration</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>We keep improving, month after month</h3>
+                    <p>The internet changes every day. We monitor your rankings, track what brings you leads, and tweak everything to keep you ahead. You're not just getting a website — you're getting a growth partner.</p>
+                    <ul>
+                        <li>Monthly performance reports</li>
+                        <li>Algorithm update protection</li>
+                        <li>Content refresh & updates</li>
+                        <li>Priority support anytime</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Page -->
+    <section class="results-page" id="results">
+        <div class="section-header">
+            <h2>What growth actually looks like</h2>
+            <p>These aren't fantasy numbers. This is what happens when engineering meets marketing.</p>
+        </div>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-number">3x</div>
+                <h3>More Website Visitors</h3>
+                <p>Our SEO-first approach means your site ranks higher for the keywords your customers actually search. More visibility = more traffic = more leads.</p>
+            </div>
+            <div class="result-card">
+                <div class="result-number">2s</div>
+                <h3>Page Load Time</h3>
+                <p>We build sites that load in under 2 seconds. Every second faster increases conversions by 7%. Your competitors' sites take 5-8 seconds. Yours won't.</p>
+            </div>
+            <div class="result-card">
+                <div class="result-number">70%</div>
+                <h3>Mobile Traffic</h3>
+                <p>Over 70% of your customers browse on phone. We design mobile-first, not as an afterthought. Every button, every form, every image — thumb-friendly and fast.</p>
+            </div>
+            <div class="result-card">
+                <div class="result-number">24/7</div>
+                <h3>Lead Generation</h3>
+                <p>With WhatsApp integration, click-to-call, and smart forms, your website becomes a 24/7 sales assistant. Even while you sleep, it collects leads.</p>
+            </div>
+            <div class="result-card">
+                <div class="result-number">500+</div>
+                <h3>Algorithm Updates/Year</h3>
+                <p>Google changes its algorithm 500+ times annually. Our clean, future-proof code means your site adapts without breaking. No panic, no rebuilds.</p>
+            </div>
+            <div class="result-card">
+                <div class="result-number">0</div>
+                <h3>Hidden Costs</h3>
+                <p>What we quote is what you pay. No surprise charges, no "extra fees" later. We believe in honest pricing because we want long-term partners, not one-time clients.</p>
             </div>
         </div>
     </section>
@@ -664,59 +869,4 @@
                     <span>₹29,999</span>
                     ₹20,999
                 </div>
-                <div class="save-tag">Save ₹9,000</div>
-                <ul>
-                    <li>Everything in Growth</li>
-                    <li>Google & Facebook Ads setup</li>
-                    <li>Professional logo & brand kit</li>
-                    <li>Monthly check-ins & tweaks</li>
-                    <li>Priority support anytime</li>
-                    <li>Unlimited changes for 30 days</li>
-                </ul>
-                <a href="https://wa.me/918725040390?text=Hi! I'm interested in the Scale plan." class="btn btn-primary">Get Started</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="section-header">
-            <h2>Let's talk</h2>
-            <p>No forms to fill. No waiting. Just a real conversation about your business.</p>
-        </div>
-        <div class="contact-boxes">
-            <div class="contact-box">
-                <div class="icon">📱</div>
-                <p class="label">WhatsApp us anytime</p>
-                <a href="https://wa.me/918725040390">87250 40390</a>
-            </div>
-            <div class="contact-box">
-                <div class="icon">📞</div>
-                <p class="label">Or just call</p>
-                <a href="tel:+916283706612">62837 06612</a>
-            </div>
-        </div>
-        <div style="margin-top: 2.5rem;">
-            <a href="https://wa.me/918725040390?text=Hi GrowSmartly! I want a free audit of my website/business." class="btn btn-primary">Get My Free Audit</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="logo">Grow<span>Smartly</span></div>
-        <p>Built with care by engineers who care.</p>
-        <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.9rem;">
-            📱 87250 40390 &nbsp;|&nbsp; 📞 62837 06612<br>
-            © 2026 GrowSmartly. All rights reserved.
-        </p>
-    </footer>
-
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/918725040390?text=Hi! I visited your website and have a question." class="whatsapp-float" title="Chat with us on WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
-
-</body>
-</html>
+                <div class="save-tag">Save
